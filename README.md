@@ -12,4 +12,4 @@ Once you are done with generating the $.so$ file, copy and paste it to site-pack
 
 Next step is to call the wrapped functions from Python side using the provided python script named as **wrapper_application.py**. Look carefully the comments provided in the code for the input argument formats to call those functions.
 
-**Note:** The input to IK or output of FK methods are not with respect to Baxter robot's base frame.
+**Note:** The input to IK or output of FK methods are not with respect to Baxter robot's base frame. One needs to generate suitable transform for IK input. Similarly one needs to multiply the output of FK with a fixed transform. We will talk about that fixed transform next.
