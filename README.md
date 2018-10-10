@@ -7,4 +7,7 @@ This repository wraps Forward-Kinematics and Inverse-Kinematics functions of cus
 
 ```$ g++ -shared ikModule.o -o ikModule.so -llapack```
 
-Once you are done with generating the $.so$ file, copy and paste it to site-package folder of you python maintainer. 
+Once you are done with generating the $.so$ file, copy and paste it to site-package folder of you python maintainer. For example if you are using **Anaconda** as your python package maintainer then, you should paste the **ikModule.so** file in the following path,
+```$ ~/anaconda3/lib/python3.7/site-packages```
+
+Next step is to call the wrapped functions from Python side using the provided python script named as **wrapper_application.py**. Look carefully the comments provided in the code.
