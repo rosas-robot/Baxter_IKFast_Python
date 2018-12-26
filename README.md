@@ -1,6 +1,11 @@
 # Baxter_IKFast_Python
 C Extension for Python of IKFast Module for baxter Robot
 
+# Update notes
+I have created two C++ wrapper-files to wrap **computeIK** and **computeFK** functions of IKFast and the file names are **myIKFastwrap.cpp** and **myIKFastwrapNew.cpp** respectively. Their usages can be tested using python files named **myIKFastwrap_app.py** and **myIKFastwrapNew_app.py** respectively. The main difference between the two wrappers is as following,
+* **myIKFastwrap.cpp** returns computed IKs solutions to Python side whereas **myIKFastwrapNew.cpp** writes the computed IKs in a text file named **ik_sol_config1.txt**. Please see the corresponding **.py** files to know function call methods 
+* Currently compilation of **.cpp** file and installation of generated **.so** can be done by directly running **compile.sh** file
+
 This repository wraps Forward-Kinematics and Inverse-Kinematics functions of custom-IKFast solver for Baxter robot. The .cpp functions are **computeIk** and **computeFk** respectively and can be found in the file named **baxter_left_arm_ikfast_solver.cpp** file. The python interface of these two functions are written in core **C** language and can be found in file named **myIKFastwrap.cpp**. The following shows the commands used to generate the shared object (.so) file named as **ikModule.so**.
 
 ```$ g++ -DNDEBUG -Wall -Wstrict-prototypes -fPIC -I/home/nobug-ros/anaconda3/include/python3.6m -c baxter_left_ik_solver_wrap.cpp -o ikModule.o -llapack```
