@@ -92,7 +92,7 @@ extern "C"{
 	// follwoing flag moves ownership of the allocated momory on stack to NPY_ARRAY
 	// and frees the memory when memory becomes out of scope
 	PyArray_ENABLEFLAGS(pyArrSol, NPY_ARRAY_OWNDATA);
-	
+	std::cout << "Solution is prepared for python side\n" << std::endl;
 	return Py_BuildValue("O", pyArrSol);
         //return Py_BuildValue("i", num_of_solutions);
     }
